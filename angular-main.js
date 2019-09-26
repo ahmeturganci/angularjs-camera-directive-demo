@@ -1,17 +1,9 @@
 var app = angular.module("app", [])
 .controller("HelloWorldCtrl", function($scope) {  
-$scope.result = $scope.barcodeResult
-console.log($scope.barcodeResult)
 
-
-$scope.chawhenBarcodeComenge = function() {
-  alert(document.getElementById("barcodeResult").value)
-};
 })
 
-
 app.directive('cameraDirective', function($compile,$timeout,$window) {
-    
     function isMobileDevice() {
         return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     }
@@ -42,8 +34,11 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
               const codeReader = new ZXing.BrowserBarcodeReader(hints);
               codeReader.getVideoInputDevices()
                   .then((videoInputDevices) => {
+                    document.getElementById("videoInputDevices").innerHTML = videoInputDevices
+
                       const sourceSelect = document.getElementById('sourceSelect')
-  
+                        document.getElementById("sourceSelect").innerHTML = sourceSelect
+                      
                       if (isMobileDevice() == true) {
                           selectedDeviceId = videoInputDevices[2].deviceId
                       }
@@ -89,4 +84,3 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
        
     };
 });
-
