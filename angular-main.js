@@ -40,10 +40,10 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
                         document.getElementById("sourceSelect").innerHTML = sourceSelect
                       
                       if (isMobileDevice() == true) {
-                          selectedDeviceId = videoInputDevices[1].deviceId
+                          selectedDeviceId = videoInputDevices[0].deviceId
                       }
                       else {
-                          selectedDeviceId = videoInputDevices[1].deviceId
+                          selectedDeviceId = videoInputDevices[0].deviceId
                           if (selectedDeviceId == 'undefined' || selectedDeviceId == null) {
                               console.warn("Cihazda kamera düşük çözünürlüklü ");
                           } else {
