@@ -34,10 +34,8 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
               const codeReader = new ZXing.BrowserBarcodeReader(hints);
               codeReader.getVideoInputDevices()
                   .then((videoInputDevices) => {
-                    document.getElementById("videoInputDevices").innerHTML = videoInputDevices
 
                       const sourceSelect = document.getElementById('sourceSelect')
-                        document.getElementById("sourceSelect").innerHTML = sourceSelect
                       
                       if (isMobileDevice() == true) {
                           selectedDeviceId = videoInputDevices[1].deviceId
