@@ -37,13 +37,14 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
                     document.getElementById("videoInputDevices").innerHTML = videoInputDevices
 
                       const sourceSelect = document.getElementById('sourceSelect')
-                        document.getElementById("sourceSelect").innerHTML ="ismobile"+isMobileDevice()
-                    
+                        document.getElementById("sourceSelect").innerHTML = sourceSelect
+                      
                       if (isMobileDevice() == true) {
-                          selectedDeviceId = videoInputDevices[0].deviceId
+                          selectedDeviceId = videoInputDevices[1].deviceId
                       }
                       else {
                           selectedDeviceId = videoInputDevices[0].deviceId
+                        }
                           if (selectedDeviceId == 'undefined' || selectedDeviceId == null) {
                               console.warn("Cihazda kamera düşük çözünürlüklü ");
                           } else {
@@ -64,7 +65,7 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
                                   const sourceSelectPanel = document.getElementById('sourceSelectPanel')
                                   sourceSelectPanel.style.display = 'block'
                               }
-                          }
+                         
                       }
                       codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video')
                       .then((result) => {
