@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf 8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Camera Demo</title>
+    <style>
+        input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+    </style>
+</head>
+
+<body ng-app="app">
+    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+
+    <script src="./angular-main.js"></script>
+    <!-- <div ngx-camera-directive ></div> -->
+    <div class="camera-content">
+        <div camera-directive showvalue="showvalue"></div>
+        <input disabled ng-model="barcode" id="barcodeResult" ng-change="whenBarcodeCome()" value="-" placeholder="Barcode"></input>
+    </div>
+    <!-- <div id="showvalue"> {{showvalue}}</div> -->
+
+</body>
+
+</html>
