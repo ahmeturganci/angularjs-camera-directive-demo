@@ -38,7 +38,7 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
 
                       const sourceSelect = document.getElementById('sourceSelect')
                         document.getElementById("sourceSelect").innerHTML = sourceSelect
-                      
+                      alert(isMobileDevice())
                       if (isMobileDevice() == true) {
                           selectedDeviceId = videoInputDevices[0].deviceId
                       }
