@@ -5,34 +5,44 @@
     <meta charset="utf 8">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Camera Demo</title>
+    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+    <script src="./angular-main.js"></script>
+
     <style>
-    #video{
-position: fixed; right: 0; bottom: 0;
-min-width: 100%; min-height: 100%;
-width: auto; height: auto; z-index: -100;
-background-size: cover;
-}
+        #video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+        }
+
         input {
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-            font-size:26px;
-}
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 26px;
+        }
     </style>
 </head>
 
 <body ng-app="app">
-    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
-
-    <script src="./angular-main.js"></script>
+    
+<h1 id="videoInputDevices"></h1>
+<h1 id="sourceSelect"></h1>
     <!-- <div ngx-camera-directive ></div> -->
     <div class="camera-content">
         <div camera-directive showvalue="showvalue"></div>
-        <input disabled ng-model="barcode" id="barcodeResult" ng-change="whenBarcodeCome()" value="-" placeholder="Barcode"></input>
+        <input disabled ng-model="barcode" id="barcodeResult" ng-change="whenBarcodeCome()" value="-"
+            placeholder="Barcode"></input>
     </div>
     <!-- <div id="showvalue"> {{showvalue}}</div> -->
 
