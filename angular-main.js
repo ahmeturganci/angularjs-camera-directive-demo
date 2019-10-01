@@ -10,7 +10,7 @@ app.directive('cameraDirective', function($compile,$timeout,$window) {
     return {
         restrict : 'EAC',
         template : '<div class="row">'
-        +'<video id="video"></video>'
+        +'<video autobuffer id="video"></video>'
         +' <div id="sourceSelectPanel" style="display:none">'
         +' <select id="sourceSelect" style="max-width:400px;display:none"> </select> </div> '
         +'<!--<pre><input type="hidden" id="barcodeResult" name="barcodeResult" value="-"></input></pre> --!></div></div>',
