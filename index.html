@@ -10,7 +10,7 @@
     <script src="./angular-main.js"></script>
 
     <style>
-   #video {
+        /* #video {
             position: fixed;
             right: 0;
             bottom: 0;
@@ -20,7 +20,7 @@
             height: auto;
             z-index: -100;
             background-size: cover;
-        } 
+        } */
 
         input {
             padding: 12px 20px;
@@ -36,7 +36,9 @@
 
 <body ng-app="app">
     <button onclick="window.location.reload(true)">refresh</button>
-
+    <button onclick="clearBarkod();">refresh</button>
+<h1 id="videoInputDevices"></h1>
+<h1 id="sourceSelect"></h1>
     <!-- <div ngx-camera-directive ></div> -->
     <div class="camera-content">
         <div camera-directive showvalue="showvalue"></div>
@@ -44,7 +46,11 @@
             placeholder="Barcode"></input>
     </div>
     <!-- <div id="showvalue"> {{showvalue}}</div> -->
-
+<script>
+    function clearBarkod() {
+        document.getElementById("barcodeResult").value = "";
+    }
+</script>
 </body>
 
 </html>
